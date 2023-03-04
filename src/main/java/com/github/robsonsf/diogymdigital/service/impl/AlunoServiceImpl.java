@@ -2,12 +2,15 @@ package com.github.robsonsf.diogymdigital.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.github.robsonsf.diogymdigital.entities.Aluno;
 import com.github.robsonsf.diogymdigital.entities.AvaliacaoFisica;
 import com.github.robsonsf.diogymdigital.entities.form.AlunoForm;
 import com.github.robsonsf.diogymdigital.entities.form.AlunoUpdateForm;
 import com.github.robsonsf.diogymdigital.service.IAlunoService;
 
+@Service
 public class AlunoServiceImpl implements IAlunoService {
 
 	@Override
