@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AvaliacaoFisicaForm {
 
-  private Long alunoId;
+	private Long alunoId;
 
-  private double peso;
+	private double peso;
 
-  private double altura;
+	private double altura;
 }
