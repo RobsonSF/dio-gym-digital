@@ -2,16 +2,21 @@ package com.github.robsonsf.diogymdigital.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.robsonsf.diogymdigital.entities.Aluno;
 import com.github.robsonsf.diogymdigital.entities.AvaliacaoFisica;
 import com.github.robsonsf.diogymdigital.entities.form.AlunoForm;
 import com.github.robsonsf.diogymdigital.entities.form.AlunoUpdateForm;
+import com.github.robsonsf.diogymdigital.repositories.AlunoRepository;
 import com.github.robsonsf.diogymdigital.service.IAlunoService;
 
 @Service
 public class AlunoServiceImpl implements IAlunoService {
+	
+	@Autowired
+	AlunoRepository repository;
 
 	@Override
 	public Aluno create(AlunoForm form) {
@@ -27,8 +32,7 @@ public class AlunoServiceImpl implements IAlunoService {
 
 	@Override
 	public List<Aluno> getAll(String dataDeNascimento) {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.findAll();
 	}
 
 	@Override
