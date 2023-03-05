@@ -1,6 +1,9 @@
 package com.github.robsonsf.diogymdigital.entities;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,7 +22,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_avaliacoes")
-public class AvaliacaoFisica {
+public class AvaliacaoFisica implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -28,6 +32,7 @@ public class AvaliacaoFisica {
 	@JoinColumn(name = "aluno_id")
 	private Aluno aluno;
 	
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDateTime dataDaAvaliacao = LocalDateTime.now();
 	
 	@Column(name="peso_atual")

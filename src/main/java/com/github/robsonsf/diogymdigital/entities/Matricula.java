@@ -1,6 +1,9 @@
 package com.github.robsonsf.diogymdigital.entities;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -19,7 +22,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_matriculas")
-public class Matricula {
+public class Matricula implements Serializable{
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,5 +33,6 @@ public class Matricula {
 	@JoinColumn(name = "aluno_id")
 	private Aluno aluno;
 	
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDateTime dataDaMatricula = LocalDateTime.now();
 }

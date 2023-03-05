@@ -1,9 +1,11 @@
 package com.github.robsonsf.diogymdigital.entities;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -26,7 +28,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "tb_alunos")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Aluno {
+public class Aluno implements Serializable{
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,6 +42,7 @@ public class Aluno {
 	
 	private String bairro;
 	
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataDeNascimento;
 	
 	@OneToMany(mappedBy = "aluno", cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
