@@ -10,5 +10,4 @@ public class JavaTimeUtils {
 	private  static final Locale LOCALE_BR = new Locale("pt", "BR");
 	
 	public static final DateTimeFormatter LOCAL_DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy", LOCALE_BR);
-
 }

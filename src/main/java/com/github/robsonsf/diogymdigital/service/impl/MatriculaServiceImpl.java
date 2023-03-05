@@ -55,5 +55,4 @@ public class MatriculaServiceImpl implements IMatriculaService {
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
-
 }
