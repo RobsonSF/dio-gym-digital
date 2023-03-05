@@ -10,7 +10,7 @@ import com.github.robsonsf.diogymdigital.entities.form.AlunoUpdateForm;
 public interface IAlunoService {
 	Aluno create(AlunoForm form);
 
-	Aluno get(Long id);
+	AlunoForm get(Long id);
 
 	List<Aluno> getAll(String dataDeNascimento);
 
