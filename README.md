@@ -9,4 +9,4 @@
 
 </ul>
 
-<p> Este repositório foi criado para fins de estudo, então contribua com ele.</p>
+<p> Este repositório foi criado para fins de estudo.</p>
